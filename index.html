@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy New Year 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="effects"></div>
+
+<!-- 🌸 หน้าแรก -->
+<div id="welcome">
+    <h1>ถึง Morning 💖</h1>
+    <p>เปิดดูสิๆๆ</p>
+    <button onclick="openCard()">เปิดการ์ด</button>
+</div>
+
+<!-- 💌 หน้าการ์ด -->
+<div id="card">
+    <h1>Happy New Year 🎉</h1>
+
+    <img src="morning.jpg" class="photo">
+
+    <p>
+        ขอให้ปีนี้เป็นปีที่ดี<br>
+        ยิ้มเยอะ ๆ มีความสุขมาก ๆ นะ 💕
+    </p>
+
+    <!-- 🔘 ปุ่มคำอวยพร (กลับมาแล้ว!) -->
+    <button onclick="showMessage(); createHeart(); createFirework();">
+        กดเพื่อรับคำอวยพร 💖
+<button onclick="playVoice()">
+    🎧 ฟังเสียงอวยพรจากเค้า
+
+    </button>
+
+    <p id="result"></p>
+
+   <!-- 🎵 เพลงพื้นหลัง -->
+<audio id="music" src="song.mp3" loop></audio>
+
+<!-- 🔊 เสียงอวยพร -->
+<audio id="voice" src="voice.mp3"></audio>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

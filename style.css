@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #fff);
+    text-align: center;
+}
+/* หน้าแรก */
+#welcome {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#welcome h1 {
+    font-size: 40px;
+}
+#welcome button {
+    padding: 15px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    background: #ff6fa1;
+    color: white;
+    cursor: pointer;
+}
+
+#welcome button:hover {
+    background: #ff4f8b;
+}
+
+/* หน้าการ์ด */
+#card {
+    display: none;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;                 /* เริ่มต้นโปร่งใส */
+    transform: translateY(20px); /* เลื่อนลงนิด ๆ */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* ตอน fade in */
+#card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ซ่อน */
+.hidden {
+    display: none;
+}
+h2 {
+    font-size: 32px;
+}
+
+/* ชื่อ Morning แบบแอนิเมชัน */
+.name {
+    font-size: 40px;
+    color: #ff2f6e;
+    display: inline-block;   /* สำคัญมาก */
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* อนิเมชันหัวใจเต้น */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+p {
+    font-size: 20px;
+    margin: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff4d6d;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff1e4d;
+}
+/* พื้นที่เอฟเฟกต์ */
+#effects {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+   z-index: 999;
+}
+
+/* 💖 หัวใจลอย */
+.heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 50px;
+    animation: floatUp 3s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-300px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* 🎆 พลุ */
+.firework {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: gold;
+    border-radius: 50%;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+/* 📸 รูป Morning */
+.photo {
+    width: 200px;          /* ปรับขนาดได้ */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;    /* ทำให้เป็นวงกลม */
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 0 20px rgba(255, 0, 100, 0.4);
+    animation: photoFloat 3s ease-in-out infinite;
+}
+
+/* อนิเมชันลอยเบาๆ */
+@keyframes photoFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
