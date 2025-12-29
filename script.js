@@ -46,15 +46,14 @@ function openCard() {
 
     const card = document.getElementById("card");
     card.style.display = "flex";
-
-    // หน่วงนิดนึงให้ transition ทำงาน
-    setTimeout(() => {
-        card.classList.add("show");
-    }, 50);
+    card.classList.add("show");
 
     const music = document.getElementById("music");
-    music.volume = 0.3;
+    music.currentTime = 0;
+    music.volume = 0;      // เริ่มเงียบ
     music.play();
+
+    fadeInMusic(music, 0.25, 5000); // ดังถึง 0.25 ภายใน 5 วิ
 }
 function playVoice() {
     const music = document.getElementById("music");
@@ -72,4 +71,32 @@ function playVoice() {
         music.play();
     };
 }
+function surprise() {
+    showMessage();
 
+    // 💖 หัวใจลอยเยอะ ๆ
+    for (let i = 0; i < 30; i++) {
+        setTimeout(createHeart, i * 80);
+    }
+
+    // 🎆 พลุแตกหลายจุด
+    for (let i = 0; i < 18; i++) {
+        setTimeout(createFirework, i * 120);
+    }
+}
+function fadeInMusic(audio, targetVolume, duration) {
+    const steps = 20;
+    const stepTime = duration / steps;
+    const volumeStep = targetVolume / steps;
+
+    let currentStep = 0;
+
+    const fade = setInterval(() => {
+        currentStep++;
+        audio.volume = Math.min(audio.volume + volumeStep, targetVolume);
+
+        if (currentStep >= steps) {
+            clearInterval(fade);
+        }
+    }, stepTime);
+}

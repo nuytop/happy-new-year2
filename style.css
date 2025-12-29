@@ -173,4 +173,23 @@ button:hover {
         transform: translateY(0);
     }
 }
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 28px;
+    }
+
+    .photo {
+        width: 150px;
+        height: 150px;
+    }
+}
 

@@ -2,8 +2,11 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy New Year 💖</title>
     <link rel="stylesheet" href="style.css">
+
+
 </head>
 <body>
 
@@ -27,15 +30,18 @@
         ยิ้มเยอะ ๆ มีความสุขมาก ๆ นะ 💕
     </p>
 
-    <!-- 🔘 ปุ่มคำอวยพร (กลับมาแล้ว!) -->
-    <button onclick="showMessage(); createHeart(); createFirework();">
-        กดเพื่อรับคำอวยพร 💖
+    <!-- 🔘 ปุ่มคำอวยพร -->
+<button onclick="surprise()">
+    กดเพื่อรับคำอวยพร 💖
+</button>
+
+<!-- 🔊 ปุ่มฟังเสียง -->
 <button onclick="playVoice()">
     🎧 ฟังเสียงอวยพรจากเค้า
+</button>
 
-    </button>
+<p id="result"></p>
 
-    <p id="result"></p>
 
    <!-- 🎵 เพลงพื้นหลัง -->
 <audio id="music" src="song.mp3" loop></audio>
