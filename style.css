@@ -102,13 +102,23 @@ button:hover {
 /* พื้นที่เอฟเฟกต์ */
 #effects {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-   z-index: 999;
+    z-index: 1;
 }
+
+#welcome, #card {
+    position: relative;
+    z-index: 10;
+}
+
+.heart {
+    opacity: 0.5;
+}
+
 
 /* 💖 หัวใจลอย */
 .heart {
